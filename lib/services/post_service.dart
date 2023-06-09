@@ -17,7 +17,7 @@ class PostService {
   }
 
   Future<http.Response> fetchComments(int id) async {
-    String endPoint = "${EndPoint.post}/$id/comments}";
+    String endPoint = "${EndPoint.post}/$id/comments";
     Uri url = Uri.parse(endPoint);
 
     return await http.get(
