@@ -64,6 +64,12 @@ class _HomePageState extends State<HomePage> {
                         },
                         child: Card(
                           child: ListTile(
+                            onLongPress: () {
+                              AppRoutes.goRouter.pushNamed(
+                                AppRoutes.editPost,
+                                extra: snapshot.data![index],
+                              );
+                            },
                             onTap: () {
                               GoRouter.of(context).pushNamed(
                                 AppRoutes.post,
@@ -100,6 +106,12 @@ class _HomePageState extends State<HomePage> {
             }
           },
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          AppRoutes.goRouter.pushNamed(AppRoutes.addPost);
+        },
+        label: Text("Tambah Berita"),
       ),
     );
   }

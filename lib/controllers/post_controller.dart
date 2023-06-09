@@ -38,8 +38,36 @@ class PostController {
   }
 
   Future<bool> delete(int id) async {
+    return await PostService().delete(id).then((res) {
+      if (res.statusCode == HttpStatus.ok) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
+
+  Future<bool> create(Post post) async {
+    return await PostService().create(post).then((res) {
+      print(res.body);
+      if (res.statusCode == HttpStatus.ok) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
+
+  Future<bool> patch(Post post) async {
     return await PostService()
-        .delete(id)
-        .then((res) => res.statusCode == HttpStatus.ok ? true : false);
+        .patch(id: post.id, title: post.title, body: post.body)
+        .then((res) {
+      print(res.body);
+      if (res.statusCode == HttpStatus.ok) {
+        return true;
+      } else {
+        return false;
+      }
+    });
   }
 }
