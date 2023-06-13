@@ -1,19 +1,19 @@
-import 'package:consume_api/controllers/post_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:go_router/go_router.dart';
 
-import '../utils/app_routes.dart';
+import '../../controllers/post_controller.dart';
+import '../../utils/app_routes.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class PostPage extends StatefulWidget {
+  const PostPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<PostPage> createState() => _PostPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _PostPageState extends State<PostPage> {
   final PostController postController = PostController();
 
   @override
@@ -115,4 +115,5 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+  
 }

@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class PostPage extends StatefulWidget {
-  const PostPage({super.key, required this.post});
+class DetailPostPage extends StatefulWidget {
+  const DetailPostPage({super.key, required this.post});
   final Post post;
 
   @override
-  State<PostPage> createState() => _PostPageState();
+  State<DetailPostPage> createState() => _PostPageState();
 }
 
-class _PostPageState extends State<PostPage> {
+class _PostPageState extends State<DetailPostPage> {
   @override
   Widget build(BuildContext context) {
     final PostController postController = PostController();

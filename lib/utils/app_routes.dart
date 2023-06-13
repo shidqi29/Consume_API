@@ -1,10 +1,10 @@
-import 'package:consume_api/pages/post_page.dart';
+import 'package:consume_api/views/post/detail_post_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../models/post.dart';
-import '../pages/add_post_page.dart';
-import '../pages/home_page.dart';
+import '../views/post/add_post_page.dart';
+import '../views/home_page.dart';
 
 class AppRoutes {
   static const home = 'home';
@@ -20,7 +20,7 @@ class AppRoutes {
 
   static Page _postPageBuilder(BuildContext context, GoRouterState state) {
     return MaterialPage(
-      child: PostPage(
+      child: DetailPostPage(
         post: state.extra as Post,
       ),
     );
