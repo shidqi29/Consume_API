@@ -36,7 +36,7 @@ class _AddPostPageState extends State<AddPostPage> {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.post != null ? "Edit Berita" : "Tambah Berita"),
+        title: Text(widget.post != null ? "Edit Post" : "Tambah Post"),
       ),
       body: Column(
         children: [
