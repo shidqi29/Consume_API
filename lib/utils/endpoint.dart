@@ -4,5 +4,5 @@ class EndPoint {
   static const comment = "$_baseURL/comments";
   static const album = "$_baseURL/albums";
   static const todo = "$_baseURL/todos";
-  static const user = "$_baseURL/user";
+  static const user = "$_baseURL/users";
 }

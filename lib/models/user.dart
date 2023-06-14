@@ -4,8 +4,8 @@ import 'company.dart';
 class User {
   int? id;
   String name;
-  String? username;
-  String? email;
+  String username;
+  String email;
   Address? address;
   String? phone;
   String? website;
@@ -14,8 +14,8 @@ class User {
   User({
     this.id,
     required this.name,
-    this.username,
-    this.email,
+    required this.username,
+    required this.email,
     this.address,
     this.phone,
     this.website,

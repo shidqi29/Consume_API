@@ -1,4 +1,5 @@
 import 'package:consume_api/models/album.dart';
+import 'package:consume_api/models/user.dart';
 import 'package:consume_api/views/album/album_page.dart';
 import 'package:consume_api/views/album/detail_album_page.dart';
 import 'package:consume_api/views/post/detail_post_page.dart';
@@ -8,6 +9,7 @@ import 'package:go_router/go_router.dart';
 import '../models/post.dart';
 import '../views/post/add_post_page.dart';
 import '../views/home_page.dart';
+import '../views/user/detail_user_page.dart';
 
 class AppRoutes {
   static const home = 'home';
@@ -15,6 +17,7 @@ class AppRoutes {
   static const addPost = 'add-post';
   static const editPost = 'edit-post';
   static const album = 'album';
+  static const user = 'user';
 
   static Page _homePageBuilder(BuildContext context, GoRouterState state) {
     return MaterialPage(
@@ -51,6 +54,13 @@ class AppRoutes {
       ),
     );
   }
+  static Page _userPageBuilder(BuildContext context, GoRouterState state) {
+    return MaterialPage(
+      child: DetailUserPage(
+        user: state.extra as User,
+      ),
+    );
+  }
 
   static GoRouter goRouter = GoRouter(
     initialLocation: '/home',
@@ -79,6 +89,11 @@ class AppRoutes {
             name: album,
             path: 'album',
             pageBuilder: _albumPageBuilder,
+          ),
+          GoRoute(
+            name: user,
+            path: 'user',
+            pageBuilder: _userPageBuilder,
           ),
         ],
       ),
