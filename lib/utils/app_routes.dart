@@ -1,3 +1,6 @@
+import 'package:consume_api/models/album.dart';
+import 'package:consume_api/views/album/album_page.dart';
+import 'package:consume_api/views/album/detail_album_page.dart';
 import 'package:consume_api/views/post/detail_post_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -11,6 +14,7 @@ class AppRoutes {
   static const post = 'post';
   static const addPost = 'add-post';
   static const editPost = 'edit-post';
+  static const album = 'album';
 
   static Page _homePageBuilder(BuildContext context, GoRouterState state) {
     return MaterialPage(
@@ -40,6 +44,14 @@ class AppRoutes {
     );
   }
 
+  static Page _albumPageBuilder(BuildContext context, GoRouterState state) {
+    return MaterialPage(
+      child: DetailAlbumPage(
+        album: state.extra as Album,
+      ),
+    );
+  }
+
   static GoRouter goRouter = GoRouter(
     initialLocation: '/home',
     routes: [
@@ -62,6 +74,11 @@ class AppRoutes {
             name: editPost,
             path: 'edit-post',
             pageBuilder: _editPostPageBuilder,
+          ),
+          GoRoute(
+            name: album,
+            path: 'album',
+            pageBuilder: _albumPageBuilder,
           ),
         ],
       ),
